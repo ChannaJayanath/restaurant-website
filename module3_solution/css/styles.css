@@ -1,0 +1,91 @@
+* {
+	box-sizing: border-box;
+}
+body {
+	background-color:blue;
+}
+h1, section {
+	font-family: sans-serif;
+	color: black;
+}
+p {
+	padding: 10px;
+	margin: 0;
+}
+
+section {	
+	color: black;
+	position: relative;
+	overflow: auto;
+	background-color: yellow;
+	height: auto;
+
+}
+header nav .header-nav{
+	margin-bottom: 0; 
+}
+.container {
+	border: none;
+	margin: 8px auto 8px auto;
+	padding: 8px;
+}
+
+#topic1,#topic2,#topic3{
+	font-size: 200%;
+	color: red;
+	padding: 8px;
+	width: 100%;
+	margin-bottom: 0;
+	margin-top: 0;
+	font-family:sans-serif;
+	font-weight: bold;
+	text-align: center;
+}
+.navbar-header button.navbar-toggle, .navbar-header .icon-bar {
+  border: 1px solid white;
+}
+#para {
+  margin-bottom: 8px;
+  margin-top: 8px;
+}
+#header-nav {
+  	border: 0;
+	border-radius: 0;
+	background-color: red;
+}
+.navbar-brand {
+  	font-size: 2em;
+	color:blue;
+	border: 0 0 8px 8px;
+}
+
+hr {
+ 	margin-top: 0;
+	margin-bottom: 0;
+	border-color: white;
+}
+
+.nav-brand {
+
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+#nav-list, .item, .nav-brand {
+  color: white;
+}
+.item {
+  font-size: 1.2em;
+}
+
+.navbar-header button.navbar-toggle {
+  clear: both;
+  margin-top: -30px;
+  margin-bottom: 10px;
+}
+p.nav-brand{
+	color: black;
+}
+
+h1.text-center{
+	color: white;
+}
