@@ -5,35 +5,36 @@ $(function () { // Same as document.addEventListener("DOMContentLoaded"...
     var screenWidth = window.innerWidth;
     if (screenWidth < 768) {
       $("#collapsable-nav").collapse('hide');
-      }
-    });
+    }
   });
+});
 
 (function (global) {
 
-  var dc = {};
-  var homeHtmlUrl ="snippets/home-snippet.html";
-  var allCategoriesUrl =
+var dc = {};
+
+var homeHtmlUrl = "snippets/home-snippet.html";
+var allCategoriesUrl =
   "https://davids-restaurant.herokuapp.com/categories.json";
-  var categoriesTitleHtml = "snippets/categories-title-snippet.html";
-  var categoryHtml = "snippets/category-snippet.html";
-  var menuItemsUrl =
+var categoriesTitleHtml = "snippets/categories-title-snippet.html";
+var categoryHtml = "snippets/category-snippet.html";
+var menuItemsUrl =
   "https://davids-restaurant.herokuapp.com/menu_items.json?category=";
-  var menuItemsTitleHtml = "snippets/menu-items-title.html";
-  var menuItemHtml = "snippets/menu-item.html";
+var menuItemsTitleHtml = "snippets/menu-items-title.html";
+var menuItemHtml = "snippets/menu-item.html";
 
 // Convenience function for inserting innerHTML for 'select'
-  var insertHtml = function (selector, html) {
-   var targetElem = document.querySelector(selector);
-    targetElem.innerHTML = html;
-    };
+var insertHtml = function (selector, html) {
+  var targetElem = document.querySelector(selector);
+  targetElem.innerHTML = html;
+};
 
 // Show loading icon inside element identified by 'selector'.
-  var showLoading = function (selector){
-    var html = "<div class='text-center'>";
-    html += "<img src='images/ajax-loader.gif'></div>";
-    insertHtml(selector, html);
-    };
+var showLoading = function (selector) {
+  var html = "<div class='text-center'>";
+  html += "<img src='images/ajax-loader.gif'></div>";
+  insertHtml(selector, html);
+};
 
 // Return substitute of '{{propName}}'
 // with propValue in given 'string'
@@ -100,9 +101,9 @@ function buildAndShowHomeHTML (categories) {
       // TODO: STEP 2: Here, call chooseRandomCategory, passing it retrieved 'categories'
       // Pay attention to what type of data that function returns vs what the chosenCategoryShortName
       // variable's name implies it expects.
-      console.log("Before call to chooseRandom");
+      // var chosenCategoryShortName = ....
       var chosenCategoryShortName = chooseRandomCategory(categories);
-      console.log("chosen category short name" + chosenCategoryShortName);
+      console.log("short name" + chosenCategoryShortName);
 
 
       // TODO: STEP 3: Substitute {{randomCategoryShortName}} in the home html snippet with the
@@ -116,18 +117,19 @@ function buildAndShowHomeHTML (categories) {
       // Hint: you need to surround the chosen category short name with something before inserting
       // it into the home html snippet.
       //
-     
-
+      // var homeHtmlToInsertIntoMainPage = ....
       var homeHtmlToInsertIntoMainPage = insertProperty(homeHtml,
                      "randomCategoryShortName",
                      "'"+chosenCategoryShortName.short_name+"'"
                      );
-      console.log("homehtmltoinsertintomainpage " + homeHtmlToInsertIntoMainPage);
+      console.log("homehtmltomainpage " + homeHtmlToInsertIntoMainPage);
+
 
 
       // TODO: STEP 4: Insert the the produced HTML in STEP 3 into the main page
       // Use the existing insertHtml function for that purpose. Look through this code for an example
       // of how to do that.
+      // ....
       insertHtml("#main-content", homeHtmlToInsertIntoMainPage);
 
     },
@@ -138,11 +140,10 @@ function buildAndShowHomeHTML (categories) {
 // Given array of category objects, returns a random category object.
 function chooseRandomCategory (categories) {
   // Choose a random index into the array (from 0 inclusively until array length (exclusively))
-  console.log("inside chooserandomecategory.");
+  console.log("choooserandomcategory imside");
   console.log(categories);
   var randomArrayIndex = Math.floor(Math.random() * categories.length);
-  console.log("categories[randomArrayIndex] " + categories[randomArrayIndex].short_name);
-
+  console.log("categories[randomArrayIndex] short_name " + categories[randomArrayIndex].short_name);
   // return category object with that randomArrayIndex
   return categories[randomArrayIndex];
 }
